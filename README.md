@@ -1,2 +1,2 @@
 # Architecture
-Contains System Arhitecture Models and Documentation
+Contains System Architecture Models and Documentation
