@@ -1,0 +1,32 @@
+// DevOps Department Relationships 
+
+@startdot
+digraph UMLdiagrams {
+node [color=Red,shape=box]
+
+ IT -> Infrastructure;
+     Infrastructure -> {Networking Servers Databases Cloud Security};
+        Networking -> {TCIP Routing Firewalls};
+        Servers -> {Virtualization "App Servers" "Load Balancers" Patching};
+        Databases -> {SQL TSQL Backups "Stored Procedures"};
+        Cloud -> {AWS Azure Monitoring}; 
+        Security -> {Firewalls "Threat Detection" Encryption}
+
+ IT -> DevOps;
+     DevOps -> {Monitoring Scripting CICD Cloud "Source Control"};
+        Monitoring -> {Servers};
+        CICD -> {Build Release};
+        Cloud -> {};
+        Scripting -> {};
+        "Source Control" -> {};
+
+ IT -> Development;
+    Development -> {Scripting "Computer Science" "Programming Language" "Source Control"};
+        Scripting -> {Syntax};
+        "Computer Science" -> {OOP "Design Patterns" "Data Structures" Algorithms Systems};
+        "Programming Language" -> {Syntax Modules "Best Practices"};
+        "Source Control" -> {Syntax, Branching, Merging};
+        Systems -> {Servers};
+        
+}
+@enddot
