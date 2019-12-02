@@ -1,0 +1,10 @@
+@startdot
+digraph UMLdiagrams {
+node [color=Red,shape=box]
+ UML -> Structure;
+ UML -> Behavior;
+   Structure -> {Package Class Deployment Object Component CompositeStructure};
+   Behavior -> {Activity UseCase State Sequence Interaction};
+     Interaction -> {Timing Communication InteractionOverview};
+}
+@enddot
