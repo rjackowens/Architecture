@@ -1,0 +1,28 @@
+autonumber " ."
+hide footbox
+
+participant Developer
+participant Git
+participant "TeamCity"
+participant "Octopus"
+participant "Deployment Server"
+
+title Continuous Delivery: TeamCity + Octopus
+
+activate Developer
+Developer -> Git: Commit Code
+Git -> "TeamCity": Initiate Build
+activate "TeamCity"
+"TeamCity" -> "TeamCity": Run Build
+Developer <-- "TeamCity": Report Build Results
+
+"TeamCity" -> "Octopus": Create Release
+deactivate "TeamCity"
+activate "Octopus"
+Developer <-- "Octopus": Report Release Results
+
+"Octopus" -> "Deployment Server": Deploy to Dev Environment
+deactivate "Octopus"
+activate "Deployment Server"
+Developer <-- "Deployment Server": Report Deployment Results
+deactivate "Deployment Server"
